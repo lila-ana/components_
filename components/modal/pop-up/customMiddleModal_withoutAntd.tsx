@@ -1,7 +1,7 @@
 import React from "react";
 import { CustomModalProps } from "@/types";
 
-const customMiddleModal_withoutantd: React.FC<CustomModalProps> = ({
+const CustomMiddleModal_withoutantd: React.FC<CustomModalProps> = ({
   visible,
   onClose,
   onOk,
@@ -39,4 +39,4 @@ const customMiddleModal_withoutantd: React.FC<CustomModalProps> = ({
   );
 };
 
-export default customMiddleModal_withoutantd;
+export default CustomMiddleModal_withoutantd;

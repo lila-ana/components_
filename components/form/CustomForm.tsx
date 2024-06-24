@@ -4,7 +4,7 @@ import { Form, Input } from "antd";
 import React from "react";
 import { FormInstance } from "antd/lib";
 import { CustomFormProps } from "@/types";
-import CustomButton from "./CustomButton";
+import CustomButton from "../button/CustomButton";
 
 const CustomForm: React.FC<CustomFormProps> = ({
   inputFields,
