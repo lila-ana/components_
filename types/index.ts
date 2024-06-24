@@ -25,3 +25,17 @@ export interface CustomNotificationProps {
   duration?: number;
   placement?: "topLeft" | "topRight" | "bottomLeft" | "bottomRight";
 }
+
+export interface InputField {
+  label?: string;
+  name: string;
+  rules?: { required: boolean; message: string }[];
+  component: JSX.Element;
+}
+
+export interface CustomFormProps {
+  inputFields: InputField[];
+  onFinish: (values: any) => void;
+  isUpdating?: boolean;
+  initialValues?: any;
+}

@@ -1,10 +1,30 @@
 "use client";
 
-import { CustomButton, CustomNotification, CustomTopModal } from "@/components";
+import {
+  CustomButton,
+  CustomForm,
+  CustomNotification,
+  CustomTopModal,
+} from "@/components/index";
 import CustomMiddleModal from "@/components/modal/CustomMiddleModal";
 import { CustomNotificationProps } from "@/types";
-import React, { useEffect, useRef, useState } from "react";
+import { Input } from "antd";
+import React, { useEffect, useState } from "react";
 
+const inputFields = [
+  {
+    label: "Email",
+    name: "email",
+    rules: [{ required: true, message: "Please input your email!" }],
+    component: <Input />,
+  },
+  {
+    label: "Password",
+    name: "password",
+    rules: [{ required: true, message: "Please input your password!" }],
+    component: <Input.Password />,
+  },
+];
 const TestPage: React.FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [isMiddleVisible, setIsMiddleVisible] = useState<boolean>(false);
@@ -44,9 +64,11 @@ const TestPage: React.FC = () => {
     fetchData();
   }, []);
   console.log("first", notificationData);
+  const handleSubmit = () => {};
+  const handleUpdate = () => {};
 
   return (
-    <div>
+    <div className="flex flex-col flex-wrap gap-2">
       <CustomButton
         title="Show Modal"
         btnType="button"
@@ -66,7 +88,6 @@ const TestPage: React.FC = () => {
         containerStyles="bg-gray-600 rounded-full text-white"
         handleClick={handleMiddleModalVisible}
       />
-
       <CustomMiddleModal
         visible={isMiddleVisible}
         title="Middle Modal"
@@ -77,6 +98,13 @@ const TestPage: React.FC = () => {
       {notificationData && (
         <CustomNotification notificationData={notificationData} />
       )}
+      <CustomForm inputFields={inputFields} onFinish={handleSubmit} />
+      <CustomForm
+        inputFields={inputFields}
+        onFinish={handleUpdate}
+        isUpdating
+      />
+      <customMiddleModal_withoutantd />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import TestPage from "@/pages/TestPage";
+import TestPage from "./pages/TestPage";
 
 export default function Home() {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect'; 
-import { CustomButton } from '@/components';
+import { CustomButton } from '@/components/index';
 
 describe('CustomButton Component', () => {
   // Test 1: Renders button with correct title
