@@ -1,6 +1,7 @@
 "use client";
 
-import CustomTabs from "@/components/Tabs/Tabs";
+import CustomTabs from "@/components/Tabs/CustomTabs";
+import DarkModeSwitch from "@/contexts/themeContext";
 import React from "react";
 
 const App: React.FC = () => {
@@ -13,7 +14,7 @@ const App: React.FC = () => {
           inactiveTabClassName="text-blue-300"
         >
           <CustomTabs.TabPane tab="Tab 1" tabKey="1">
-            <div className="p-4 bg-white border border-gray-200 rounded shadow">
+            <div className="p-4 bg-white border border-gray-200 rounded shadow dark:bg-[#ffff00]">
               Content of Tab 1
             </div>
           </CustomTabs.TabPane>
@@ -28,6 +29,7 @@ const App: React.FC = () => {
             </div>
           </CustomTabs.TabPane>
         </CustomTabs>
+        <DarkModeSwitch />
       </div>
     </div>
   );
