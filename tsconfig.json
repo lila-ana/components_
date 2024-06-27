@@ -1,6 +1,13 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "forceConsistentCasingInFileNames": true,
+    "target": "ES6",
+    // "jsx": "react",
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -18,11 +25,21 @@
       }
     ],
     "paths": {
-      "@/components/*": ["./components/*"],
-      "@/pages/*": ["./pages/*"],
-      "@/*": ["./*"]
+      "@/components/*": [
+        "./components/*"
+      ],
+      "@/pages/*": [
+        "./pages/*"
+      ],
+      "@/*": [
+        "./*"
+      ]
     },
-    "types": ["@types/jest", "@types/node", "@types/testing-library__jest-dom"]
+    "types": [
+      "@types/jest",
+      "@types/node",
+      "@types/testing-library__jest-dom"
+    ]
   },
   "include": [
     "next-env.d.ts",
@@ -32,5 +49,8 @@
     "store/Providers.js",
     "src/**/*.ts"
   ],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
 }
