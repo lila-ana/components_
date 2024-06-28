@@ -1,4 +1,4 @@
-import { CustomTabsProps, TabPaneProps } from "@/types/Tabs";
+import { CustomTabsProps, TabPaneProps } from "@/types/tabs.types";
 import React, { useState } from "react";
 
 const TabPane: React.FC<TabPaneProps> = ({ children }) => {
@@ -33,14 +33,18 @@ const CustomTabs: React.FC<CustomTabsProps> & {
             const { tab, tabKey } = child.props;
             const isActive = tabKey === activeKey;
             const buttonClassName = isActive
-              ? `px-4 py-2 focus:outline-none ${activeTabClassName || "border-b-2 border-blue-500 text-blue-500"}`
-              : `px-4 py-2 focus:outline-none ${inactiveTabClassName || "text-gray-500"}`;
+              ? `px-4 py-2 focus:outline-none ${
+                  activeTabClassName ||
+                  "border-b-2 border-blue-500 text-blue-500"
+                }`
+              : `px-4 py-2 focus:outline-none ${
+                  inactiveTabClassName || "text-gray-500"
+                }`;
 
             return (
               <button
                 key={tabKey}
                 className={buttonClassName}
-                // className={`px-4 py-2 focus:outline-none ${isActive ? "border-b-2 border-blue-500 text-blue-500" : "text-gray-500"}`}
                 onClick={() => handleTabClick(tabKey)}
               >
                 {tab}
@@ -52,8 +56,6 @@ const CustomTabs: React.FC<CustomTabsProps> & {
       </div>
       <div className="mt-4">
         {React.Children.map(children, (child) => {
-          //   console.log(`Rendering tab: ${child.props.tabKey}`);
-
           if (React.isValidElement(child) && child.props.tabKey === activeKey) {
             return <div key={child.props.tabKey}>{child.props.children}</div>;
           }
